@@ -1,0 +1,22 @@
+# PyCharm
+.idea/
+
+# Python
+__pycache__/
+*.py[cod]
+
+# Virtual environment
+venv/
+.venv/
+
+# Dataset
+data/*.csv
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Environment variables
+.env
+
+# Logs
+*.log
