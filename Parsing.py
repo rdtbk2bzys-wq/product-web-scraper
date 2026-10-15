@@ -21,8 +21,7 @@ def get_data(link,html,**kwargs):
     if response.status_code == 200:
         soup = BeautifulSoup(response.text, 'lxml')
         data = soup.find(html,**kwargs)
-        response.status_code
-    return data, response.status_code
+    return data
 
 def basic_column(data,html,**kwargs):
     column = data.find(html,**kwargs)
@@ -97,10 +96,10 @@ while True:
         in_stock = False
 
     review_count = data.find("span", class_="text-xs text-muted-foreground font-mono")
-    if not revive_count:
-        revive_count = None
+    if not review_count:
+        review_count = None
     else:
-        revive_count = int(revive_count.text.replace("(","",).replace(")","").replace("reviews",""))
+        review_count = int(review_count.text.replace("(","",).replace(")","").replace("reviews",""))
 
     rating = data.find("span", class_="text-sm font-mono font-semibold text-foreground")
     if not rating:
